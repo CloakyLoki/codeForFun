@@ -28,17 +28,17 @@ public class DivideTwoIntegers {
             int increment = 1;
 
             for (int i = 0; i < dividendStr.length(); i++) {
-                if ((Integer.parseInt(dividendStr.substring(i, i + increment)) < divisor)) {
-                    increment++;
+                if ((Integer.parseInt(dividendStr.substring(i, i + increment)) < divisor)) { //проверяем самый левый разряд
+                    increment++; //для сдвига в случае, если левый разряд меньше делителя
 
                     int tempDividend = Integer.parseInt(dividendStr.substring(i, i + increment));
                     int divCounter = 0;
 
                     while (tempDividend - divCounter >= divCounter) {
-                        tempDividend -= divisor;
+                        tempDividend -= divisor; //считаем, сколько делителей "поместится" в первом делимом
                         divCounter++;
                     }
-                    result += Math.pow(divCounter, i + divCounter);
+                    result += Math.pow(divCounter, i + divCounter); //вот тут неправильно. Выдает 1, а нужно 10. Требуется цикл, чтобы увеличить, в завивисмости от разряда
 
                 } else {
                     int tempDividend = Integer.parseInt(dividendStr.substring(i, i + increment));
