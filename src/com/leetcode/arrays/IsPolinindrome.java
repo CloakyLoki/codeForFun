@@ -1,6 +1,6 @@
 package com.leetcode.arrays;
 //Given an integer x, return true if x is palindrome integer.
-public class isPolinindrome {
+public class IsPolinindrome {
     public static void main(String[] args) {
         int num = 121;
         int num2 = 123;

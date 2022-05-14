@@ -20,21 +20,36 @@ public class PlusOne {
 
     public static void main(String[] args) {
 
-        int[] digits = {6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3};
+        int[] digits = {8,9,9,9};
         System.out.println(Arrays.toString(plusOne(digits)));
     }
 
     public static int[] plusOne(int[] digits) {
-        double inputSum = 0;
-        for (int i = 0; i < digits.length; i++) {
-            inputSum += digits[i] * Math.pow(10, (digits.length - i - 1));
+
+        int simpleIncrement = 0;
+        boolean flagToIncrease = false;
+
+        for (int i = 0; i < digits.length - 1; i++) {
+            simpleIncrement++;
+
+            if (digits[digits.length - 1] != 9 && simpleIncrement == 1) {
+                digits[digits.length - 1]++;
+                break;
+            }
+            if (digits[i] == 9 && i == 0) {
+                flagToIncrease = true;
+                break;
+            }
+            if (digits[i + 1] == 9) {
+                digits[i + 1] = 0;
+                digits[i]++;
+            }
         }
-        inputSum++;
-        String temp = Double.toString(inputSum);
-        int[] resultArray = new int[temp.length()];
-        for (int i = 0; i < temp.length(); i++) {
-            resultArray[i] = temp.charAt(i) - '0';
+        if (flagToIncrease) {
+            int increasedArray[] = new int[digits.length + 1];
+            increasedArray[0] = 1;
+            return increasedArray;
         }
-        return resultArray;
+        return digits;
     }
 }
