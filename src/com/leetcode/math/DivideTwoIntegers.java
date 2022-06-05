@@ -17,8 +17,8 @@ public class DivideTwoIntegers {
 
     public static void main(String[] args) {
 
-        int dividend = -2147483648;
-        int divisor = -1;
+        int dividend = Integer.MIN_VALUE;
+        int divisor = 1;
 
         System.out.println(solution(dividend, divisor));
     }
@@ -26,25 +26,52 @@ public class DivideTwoIntegers {
     private static int solution(int dividend, int divisor) {
 
         int result = 0;
-        int tempDividend = 0;
-        int tempDivisor = Math.abs(divisor);
+        int tempDividend;
+        int tempDivisor;
+        boolean isLong = false;
 
-        if (dividend == -2_147_483_648) {
-            dividend += 1;
-            result++;
-            tempDividend = Math.abs(dividend);
+        if (dividend == Integer.MIN_VALUE && divisor == 1) {
+            return Integer.MIN_VALUE;
+        }
+        if (dividend == Integer.MIN_VALUE && divisor == -1){
+            return Integer.MAX_VALUE;
+        }
+        if(dividend == Integer.MAX_VALUE && divisor == 1){
+            return Integer.MAX_VALUE;
+        }
+        if (dividend == Integer.MAX_VALUE && divisor == -1){
+            return -Integer.MAX_VALUE;
+        }
+        if (dividend == Integer.MIN_VALUE) {
+            if (divisor < 0) {
+                tempDividend = dividend;
+                tempDivisor = Math.abs(divisor);
+                while (tempDividend <= tempDivisor) {
+                    tempDividend += tempDivisor;
+                    result++;
+                }
+            } else {
+                tempDividend = dividend;
+                tempDivisor = Math.abs(divisor);
+
+                while (tempDividend <= tempDivisor) {
+                    tempDividend += tempDivisor;
+                    result++;
+                }
+            }
         } else {
             tempDividend = Math.abs(dividend);
-        }
+            tempDivisor = Math.abs(divisor);
 
-        while (tempDividend >= tempDivisor) {
-            tempDividend -= tempDivisor;
-            result++;
+            while (tempDividend >= tempDivisor) {
+                tempDividend -= tempDivisor;
+                result++;
+            }
         }
-        if ((dividend < 0 && divisor > 0) || (dividend > 0 && divisor < 0)) {
-            result = Math.negateExact(result);
+        if (isLong) {
+            return result * Integer.signum(dividend) * Integer.signum(divisor) - 1;
+        } else {
+            return (result * Integer.signum(dividend) * Integer.signum(divisor));
         }
-
-        return result;
     }
 }
