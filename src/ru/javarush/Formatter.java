@@ -1,4 +1,4 @@
-package ru.javarush.encoding;
+package ru.javarush;
 
 //Сделай так, чтобы метод format(String name, int salary) возвращал строку в таком виде:
 //        Меня зовут <name>. Я буду зарабатывать $<salary> в месяц.

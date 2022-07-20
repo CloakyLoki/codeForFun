@@ -1,4 +1,4 @@
-package ru.javarush.encoding;
+package ru.javarush;
 
 public class CheckDomain {
     public static void main(String[] args) {

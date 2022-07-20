@@ -1,4 +1,4 @@
-package ru.javarush.encoding;
+package ru.javarush;
 //Используя StringTokenizer раздели query на части по разделителю delimiter.
 //
 //        Пример:

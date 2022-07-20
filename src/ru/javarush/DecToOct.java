@@ -1,4 +1,4 @@
-package ru.javarush.encoding;
+package ru.javarush;
 import java.util.regex.Pattern;
 
 public class DecToOct {

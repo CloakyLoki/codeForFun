@@ -1,4 +1,4 @@
-package com.com.dmdev.strings;
+package com.dmdev.strings;
 
 import java.util.Arrays;
 

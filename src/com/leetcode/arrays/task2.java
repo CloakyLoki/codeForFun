@@ -15,7 +15,7 @@ public class task2 {
 
     public static int findNumbers(int[] nums) {
         int result = 0;
-        int length = 0;
+        int length;
         for (int i = 0; i < nums.length; i++) {
             length = 0;
             int j = 0;

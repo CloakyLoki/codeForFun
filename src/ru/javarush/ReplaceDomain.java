@@ -1,4 +1,4 @@
-package ru.javarush.encoding;
+package ru.javarush;
 //путь — "/usr/java/jdk1.8/bin/"
 //        версия jdk — "jdk-13"
 //

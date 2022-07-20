@@ -1,4 +1,4 @@
-package com.com.youtube;
+package com.youtube;
 
 import java.util.Scanner;
 

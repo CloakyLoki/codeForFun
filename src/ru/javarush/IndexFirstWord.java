@@ -1,4 +1,4 @@
-package ru.javarush.encoding;
+package ru.javarush;
 //Метод getIndexFromFirstWord(String, String) и метод getIndexFromLastWord(String, String) принимают строку и слово.
 //        Нужно, чтобы метод getIndexFromFirstWord(String, String) вернул индекс первого символа первого слова
 //        (второй параметр метода) в строке (первый параметр метода). А метод getIndexFromLastWord(String, String)

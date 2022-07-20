@@ -1,4 +1,4 @@
-package ru.javarush.encoding;
+package ru.javarush;
 //Выведи на экран следующий текст в две строки:
 //        It's a Windows path: "C:\Program Files\Java\jdk-13.0.0\bin"
 //        It's a Java string: \"C:\\Program Files\\Java\\jdk-13.0.0\\bin\"
